@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+      <!-- Classes that contain an underscore should be excluded from Findbugs checks -->
+	 <Match>
+       <Class name="~.*([a-zA-Z0-9]*(_+)[a-zA-Z0-9]*)" />
+     </Match>  
+</FindBugsFilter>

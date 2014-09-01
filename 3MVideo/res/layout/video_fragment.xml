@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/round_border" >
+
+    <com.mmm.mvideo.view.MMMVideoView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tvVideoTitle"
+        android:layout_above="@+id/tvVideoDesc"
+       />
+    
+    <TextView
+        android:id="@+id/tvVideoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/length_L"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingLeft="5dp"
+        android:background="@drawable/tab_icon_pressed"
+        android:textSize="@dimen/fontsize_Text_L" />
+
+    <TextView
+        android:id="@+id/tvVideoDesc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/length_XL"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="5dp"
+        android:textSize="@dimen/fontsize_Text_ML" />
+
+    <ImageButton
+        android:id="@+id/btnDownload"
+        android:layout_width="@dimen/length_L"
+        android:layout_height="@dimen/length_L"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/download" />
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- font size -->
+    <dimen name="fontsize_Text_XL">11pt</dimen>
+    <dimen name="fontsize_Text_L">9pt</dimen>
+    <dimen name="fontsize_Text_ML">8pt</dimen>
+    <dimen name="fontsize_Text_M">7pt</dimen>
+    <dimen name="fontsize_Text_S">4pt</dimen>
+    <!-- length -->
+    <dimen name="length_XL">100dp</dimen>
+    <dimen name="length_L">60dp</dimen>
+    <dimen name="length_M">40dp</dimen>
+    <dimen name="length_S">20dp</dimen>
+    <!-- gap for margin or padding -->
+    <dimen name="length_gap_XL">20dp</dimen>
+    <dimen name="length_gap_L">10dp</dimen>
+    <dimen name="length_gap_S">5dp</dimen>
+    <!-- image size -->
+    <dimen name="image_M">60dp</dimen>
+
+</resources>

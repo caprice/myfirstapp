@@ -1,0 +1,271 @@
+<project name="AndroidDemo" default="release" basedir=".">
+
+	<property file="local.properties" />
+	<property file="default.properties" />
+	<property file="ant.properties" />
+	<path id="android.antlibs">
+		<pathelement path="${sdk.dir}/tools/lib/anttasks.jar" />
+		<pathelement path="${sdk.dir}/tools/lib/sdklib.jar" />
+		<pathelement path="${sdk.dir}/tools/lib/androidprefs.jar" />
+		<pathelement path="${sdk.dir}/tools/lib/apkbuilder.jar" />
+		<pathelement path="${sdk.dir}/tools/lib/jarutils.jar" />
+	</path>
+	
+	<!-- ANT -->
+	<property environment="env" />
+	<!-- project folder -->
+	<property name="proj-folder" value="${env.ANDROID_PROJ_HOME}" />
+	<!-- app name -->
+	<property name="appName" value="3MVideo-build-${env.BUILD_NUMBER}-${env.BUILD_ID}" />
+	<!-- app target platform -->
+	<property name="target" value="android-16" />
+	<!-- .apk output folder -->
+	<property name="outputPath" value="${proj-folder}/output" />
+	<!-- SDK HOME -->
+	<property name="sdk-folder" value="${env.ANDROID_SDK_HOME}" />
+	<!-- SDK platform folder -->
+	<property name="sdk-platform-folder" value="${sdk-folder}/platforms/${target}" />
+	<!-- SDK tools -->
+	<property name="sdk-tools" value="${sdk-folder}/tools" />
+	<!-- SDK platform tools -->
+	<property name="sdk-platform-tools" value="${sdk-folder}/platform-tools" />
+
+	<!-- android and jdk commands -->
+	<property name="aapt" value="${sdk-platform-tools}/aapt" />
+	<property name="aidl" value="${sdk-platform-tools}/aidl" />
+	<property name="dx" value="${sdk-platform-tools}/dx.bat" />
+	<property name="apkbuilder" value="${sdk-tools}/apkbuilder.bat" />
+	<property name="jarsigner" value="${env.JAVA_HOME}/bin/jarsigner" />
+
+	<!-- jars -->
+	<property name="android-jar" value="${sdk-platform-folder}/android.jar" />
+	<property name="android-maps-jar" value="${sdk-folder}/add-ons/addon_google_apis_google_inc_8/libs/maps.jar" />
+
+	<!-- framework.aidl -->
+	<property name="framework-aidl" value="${sdk-platform-folder}/framework.aidl" />
+
+	<!-- .R -->
+	<property name="outdir-gen" value="gen" />
+	<!-- bin -->
+	<property name="outdir-bin" value="bin" />
+
+	<property name="manifest-xml" value="AndroidManifest.xml" />
+	<property name="resource-dir" value="res" />
+	<property name="asset-dir" value="assets" />
+	<property name="srcdir" value="src" />
+	<property name="srcdir-ospath" value="${basedir}/${srcdir}" />
+	<property name="external-lib" value="libs" />
+	<property name="external-lib-ospath" value="${basedir}/${external-lib}" />
+
+	<property name="outdir-classes" value="${outdir-bin}/classes" />
+	<property name="outdir-classes-ospath" value="${basedir}/${outdir-classes}" />
+
+	<property name="dex-file" value="classes.dex" />
+	<property name="dex-path" value="${outdir-bin}/${dex-file}" />
+	<property name="dex-ospath" value="${basedir}/${dex-path}" />
+
+	<property name="resources-package" value="${outdir-bin}/resources.ap_" />
+	<property name="resources-package-ospath" value="${basedir}/${resources-package}" />
+
+	<!-- unsigned.apk -->
+	<property name="out-unsigned-package" value="${outdir-bin}/${appName}-unsigned.apk" />
+	<property name="out-unsigned-package-ospath" value="${basedir}/${out-unsigned-package}" />
+
+	<!-- keystore folder -->
+	<property name="keystore-file" value="${proj-folder}/keys" />
+	<!-- keystore -->
+	<property name="key.alias" value="key.keystore" />
+	<property name="key.store" value="${keystore-file}/key.keystore"/>
+	<!-- password of keystroe -->
+	<property name="key.store.password" value="1M2M3M" />
+	<property name="key.alias.password" value="1M2M3M" />
+
+	<!-- signed .apk-->
+	<property name="out-signed-package" value="${outputPath}/${appName}.apk" />
+	<property name="out-signed-package-ospath" value="${out-signed-package}" />
+	
+	<property name="report-path" value="reports" />
+
+	<!-- init -->
+	<target name="init">
+		<echo>Initializing all output directories...</echo>
+		<delete dir="${outdir-bin}" />
+		<delete dir="${outdir-classes}" />
+		<mkdir dir="${report-path}" />
+		<mkdir dir="${outdir-bin}" />
+		<mkdir dir="${outdir-classes}" />
+		<mkdir dir="${report-path}" />
+	</target>
+
+	<!-- generate R.java  -->
+	<target name="gen-R" depends="init">
+		<echo>Generating R.java from the resources...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package" />
+			<arg value="-f" />
+			<arg value="-m" />
+			<arg value="-J" />
+			<arg value="${outdir-gen}" />
+			<arg value="-S" />
+			<arg value="${resource-dir}" />
+			<arg value="-M" />
+			<arg value="${manifest-xml}" />
+			<arg value="-I" />
+			<arg value="${android-jar}" />
+		</exec>
+	</target>
+
+	<!-- aidl -->
+	<target name="aidl_" depends="gen-R">
+		<echo>Compiling .aidl into java files...</echo>
+		<apply executable="${aidl}" failonerror="true">
+			<arg value="-p${framework-aidl}" />
+			<arg value="-I${srcdir}" />
+			<arg value="-o${outdir-gen}" />
+			<fileset dir="${srcdir}">
+				<include name="**/*.aidl" />
+			</fileset>
+		</apply>
+	</target>
+
+	<target name="compile" depends="aidl_">
+		<echo>Compiling java source code...</echo>
+		<javac srcdir="." destdir="${outdir-classes}" bootclasspath="${android-jar}" encoding="UTF-8" debug="true">
+			<classpath>
+				<fileset dir="${external-lib}" includes="*.jar" />
+				<filelist>
+					<file name="${android-maps-jar}" />
+				</filelist>
+			</classpath>
+		</javac>
+<!-- 
+		<jar destfile="c:/hello.jar" basedir="${outdir-bin}/classes">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Main-Class" value="package.Main" />
+			</manifest>
+		</jar> -->
+	</target>
+	
+	<!-- findbug -->
+	<property name="findbugs.home" value="${env.FINDBUGS_HOME}" />  
+	<path id="findbugs_lib">  
+    	<fileset dir="${findbugs.home}/lib/">  
+        	<include name="*.jar"/>  
+    	</fileset>  
+	</path>  
+	<taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask" classpathref="findbugs_lib" />  
+    <target name="findbugs" depends="compile">  
+        <findbugs home="${findbugs.home}" output="xml:withMessages" outputFile="${report-path}/findbugs.xml">  
+            <!-- so we dont get hundrets of "The following classes needed for analysis were missing" warnings. -->   
+            <auxClasspath path="${android.jar}" />
+            <auxClasspath path="${android-maps-jar}" />  
+            <auxClasspath>  
+                <fileset dir="${external-lib-ospath}" includes="*.jar" />  
+            </auxClasspath>  
+            <class location="${outdir-classes-ospath}" />  
+            <sourcePath path="${srcdir-ospath}" />  
+        </findbugs>  
+    </target>
+    
+    <!-- chechstyle -->
+    <patternset id="java.files.pattern" includes="**/*.java"/>
+    <property name="checkstyle.dir" value="${env.CHECKSTYLE_HOME}" />  
+    
+    <target name="checkstyle" depends="findbugs" description="Check code style for compliance with coding standards">
+        <property name="checkstyle.data.dir" location="${report-path}"/>                
+        <property name="checkstyle.data.file" location="${checkstyle.data.dir}/checkstyle-result.xml"/>   
+        <property name="checkstyle.report.file" location="${checkstyle.data.dir}/checkstyle.html"/>  
+        <property name="checkstyle.xsl.file" location="${checkstyle.dir}/contrib/checkstyle-noframes.xsl"/>   
+        <taskdef resource="checkstyletask.properties" classpath="${checkstyle.dir}/checkstyle-all-4.4.jar"/>  
+        <checkstyle config="${checkstyle.dir}/sun_checks.xml"                      
+            failOnViolation="false" failureProperty="checkstyle.failure">
+            <fileset dir="src">                                                                   
+                <patternset refid="java.files.pattern"/>
+            </fileset>
+            <!-- uncomment to print to console as well -->
+            <!--formatter type="plain"/-->
+            <formatter type="xml" toFile="${checkstyle.data.file}"/>         
+        </checkstyle>
+        <xslt in="${checkstyle.data.file}" out="${checkstyle.report.file}"
+            style="${checkstyle.xsl.file}"/>                                       
+    </target>
+    
+    <!-- dex -->
+    <target name="dex" depends="checkstyle">  
+        <echo>Converting compiled files and external libraries into a .dex file...</echo>  
+        <exec executable="${dx}" failonerror="true">  
+            <arg value="--dex" />  
+            <arg value="--output=${dex-ospath}" />  
+            <arg value="${outdir-classes-ospath}" />  
+            <arg value="${external-lib-ospath}" />  
+        </exec>  
+    </target>  
+    
+    
+
+	<target name="package-res-and-assets">
+		<echo>Packaging resources and assets...</echo>
+		<exec executable="${aapt}" failonerror="true">
+			<arg value="package" />
+			<arg value="-f" />
+			<arg value="-M" />
+			<arg value="${manifest-xml}" />
+			<arg value="-S" />
+			<arg value="${resource-dir}" />
+			<arg value="-A" />
+			<arg value="${asset-dir}" />
+			<arg value="-I" />
+			<arg value="${android-jar}" />
+			<arg value="-F" />
+			<arg value="${resources-package}" />
+		</exec>
+	</target>
+
+	<target name="package" depends="dex, package-res-and-assets">
+		<echo>Packaging unsigned apk for release...</echo>
+		<exec executable="${apkbuilder}" failonerror="true">
+			<arg value="${out-unsigned-package-ospath}" />
+			<arg value="-v" />
+			<arg value="-u" />
+			<arg value="-z" />
+			<arg value="${resources-package-ospath}" />
+			<arg value="-f" />
+			<arg value="${dex-ospath}" />
+			<arg value="-rf" />
+			<arg value="${srcdir-ospath}" />
+			<arg value="-rj" />
+			<arg value="${basedir}/libs" />
+		</exec>
+		<echo>It will need to be signed with jarsigner before being published.</echo>
+	</target>
+
+	<!-- sign apk -->
+	<target name="jarsignerTo" depends="package">
+		<echo>...sing app...</echo>
+		<echo>${jarsigner} -verbose -digestalg SHA1 -sigalg MD5withRSA -keystore ${key.store} -storepass ${key.store.password} -keypass ${key.alias.password} -signedjar ${out-signed-package-ospath} ${out-unsigned-package-ospath} ${key.alias}</echo>
+		<exec executable="${jarsigner}" failonerror="true">
+		    <!--  -verbose -digestalg SHA1 -sigalg MD5withRSA -keystore ${key.store} -storepass ${key.store.password} -keypass ${key.alias.password} -signedjar ${out-signed-package-ospath} ${out-unsigned-package-ospath} ${key.alias} -->
+			<arg value="-verbose" />
+			<arg value="-digestalg" />
+			<arg value="SHA1" />
+			<arg value="-sigalg" />
+			<arg value="MD5withRSA" /> 
+			<arg value="-keystore" />
+			<arg value="${key.store}" />
+			<arg value="-storepass" />
+			<arg value="${key.store.password}" />
+			<arg value="-keypass" />
+			<arg value="${key.alias.password}" />
+			<arg value="-signedjar" />
+			<arg value="${out-signed-package-ospath}" />
+			<arg value="${out-unsigned-package-ospath}" />
+			<arg value="${key.alias}" />
+		</exec>
+	</target>
+	
+	<target name="release" depends="jarsignerTo">
+		<delete file="${out-unsigned-package-ospath}" />
+		<echo>APK is released. path:${out-signed-package-ospath}</echo>
+	</target>
+</project>

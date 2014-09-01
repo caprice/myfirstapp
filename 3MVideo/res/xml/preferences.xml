@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="prefKey" 
+    >
+    <PreferenceCategory android:title="> Video categories" >
+        <com.mmm.mvideo.widget.ListPreferenceMultiSelect
+            android:defaultValue="#ALL#"
+            android:dialogTitle="Choose video categories"
+            android:key="mvideo.tabs"
+            android:summary="Specify which categories will be displayed in the app"
+            android:title="Choose video categories"
+            android:layout="@layout/preference_layout" 
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

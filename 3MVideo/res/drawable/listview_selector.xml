@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- default background -->
+    <!-- the background when lose focus -->
+    <item android:drawable="@drawable/tab_icon_1" android:state_window_focused="false"/>
+    <!-- in non-touchable mode, the background when get focus and click it -->
+    <item android:drawable="@drawable/tab_icon" android:state_focused="true" android:state_pressed="true"/>
+
+    <!-- in touchable mode, the background when get focus and click it -->
+
+    <item android:drawable="@drawable/tab_icon_pressed" android:state_focused="false" android:state_pressed="true"/>
+
+    <!-- background when selected -->
+
+    <item android:drawable="@drawable/tab_icon_pressed" android:state_selected="true"/>
+
+    <!-- background when get focus -->
+    <item android:drawable="@drawable/tab_icon_pressed" android:state_focused="true"/>
+</selector>

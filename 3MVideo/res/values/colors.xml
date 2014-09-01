@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="holo_blue_1">#33B5E5</color>
+    <color name="holo_blue_2">#0099CC</color>
+    <color name="background">#FF000000</color>
+    <color name="control_back">#AA00003D</color>
+
+    <!-- 艾利斯兰. -->
+    <color name="aliceblue_100">#FFF0F8FF</color>
+
+    <!-- 古董白. -->
+    <color name="antiquewhite_100">#FFFAEBD7</color>
+
+    <!-- 浅绿色. -->
+    <color name="aqua_100">#FF00FFFF</color>
+
+    <!-- 碧绿色. -->
+    <color name="aquamarine_100">#FF7FFFD4</color>
+
+    <!-- 天蓝色. -->
+    <color name="azure_100">#FFF0FFFF</color>
+
+    <!-- 米色. -->
+    <color name="beige_100">#FFF5F5DC</color>
+
+    <!-- 桔黄色. -->
+    <color name="bisque_100">#FFFFE4C4</color>
+
+    <!-- 黑色. -->
+    <color name="black_100">#FF000000</color>
+
+    <!-- 白杏色. -->
+    <color name="blanchedalmond_100">#FFFFEBCD</color>
+
+    <!-- 蓝色. -->
+    <color name="blue_100">#FF0000FF</color>
+
+    <!-- 紫罗兰蓝色. -->
+    <color name="blueviolet_100">#FF8A2BE2</color>
+
+    <!-- 褐色. -->
+    <color name="brown_100">#FFA52A2A</color>
+
+    <!-- 实木色. -->
+    <color name="burlywood_100">#FFDEB887</color>
+
+    <!-- 军兰色. -->
+    <color name="cadetblue_100">#FF5F9EA0</color>
+
+    <!-- 黄绿色. -->
+    <color name="chartreuse_100">#FF7FFF00</color>
+
+    <!-- 巧可力色. -->
+    <color name="chocolate_100">#FFD2691E</color>
+
+    <!-- 珊瑚色. -->
+    <color name="coral_100">#FFFF7F50</color>
+
+    <!-- 菊兰色. -->
+    <color name="cornflowerblue_100">#FF6495ED</color>
+
+    <!-- 米绸色. -->
+    <color name="cornsilk_100">#FFFFF8DC</color>
+
+    <!-- 暗深红色. -->
+    <color name="crimson_100">#FFDC143C</color>
+
+    <!-- 青色. -->
+    <color name="cyan_100">#FF00FFFF</color>
+
+    <!-- 暗蓝色. -->
+    <color name="darkblue_100">#FF00008B</color>
+
+    <!-- 暗青色. -->
+    <color name="darkcyan_100">#FF008B8B</color>
+
+    <!-- 暗金黄色. -->
+    <color name="darkgoldenrod_100">#FFB8860B</color>
+
+    <!-- 暗灰色. -->
+    <color name="darkgray_100">#FFA9A9A9</color>
+
+    <!-- 暗绿色. -->
+    <color name="darkgreen_100">#FF006400</color>
+
+    <!-- 暗灰色. -->
+    <color name="darkgrey_100">#FFA9A9A9</color>
+
+    <!-- 暗黄褐色. -->
+    <color name="darkkhaki_100">#FFBDB76B</color>
+
+    <!-- 暗洋红. -->
+    <color name="darkmagenta_100">#FF8B008B</color>
+
+    <!-- 暗橄榄绿. -->
+    <color name="darkolivegreen_100">#FF556B2F</color>
+
+    <!-- 暗桔黄色. -->
+    <color name="darkorange_100">#FFFF8C00</color>
+
+    <!-- 暗紫色. -->
+    <color name="darkorchid_100">#FF9932CC</color>
+
+    <!-- 暗红色. -->
+    <color name="darkred_100">#FF8B0000</color>
+
+    <!-- 暗肉色. -->
+    <color name="darksalmon_100">#FFE9967A</color>
+
+    <!-- 暗海兰色. -->
+    <color name="darkseagreen_100">#FF8FBC8F</color>
+
+    <!-- 暗灰蓝色. -->
+    <color name="darkslateblue_100">#FF483D8B</color>
+
+    <!-- 暗瓦灰色. -->
+    <color name="darkslategray_100">#FF2F4F4F</color>
+
+    <!-- 暗宝石绿. -->
+    <color name="darkturquoise_100">#FF00CED1</color>
+
+    <!-- 暗紫罗兰色. -->
+    <color name="darkviolet_100">#FF9400D3</color>
+
+    <!-- 深粉红色. -->
+    <color name="deeppink_100">#FFFF1493</color>
+
+    <!-- 深天蓝色. -->
+    <color name="deepskyblue_100">#FF00BFFF</color>
+
+    <!-- 暗灰色. -->
+    <color name="dimgray_100">#FF696969</color>
+
+    <!-- 闪兰色. -->
+    <color name="dodgerblue_100">#FF1E90FF</color>
+
+    <!-- 火砖色. -->
+    <color name="firebrick_100">#FFB22222</color>
+
+    <!-- 花白色. -->
+    <color name="floralwhite_100">#FFFFFAF0</color>
+
+    <!-- 森林绿. -->
+    <color name="forestgreen_100">#FF228B22</color>
+
+    <!-- 紫红色. -->
+    <color name="fuchsia_100">#FFFF00FF</color>
+
+    <!-- 淡灰色. -->
+    <color name="gainsboro_100">#FFDCDCDC</color>
+
+    <!-- 幽灵白. -->
+    <color name="ghostwhite_100">#FFF8F8FF</color>
+
+    <!-- 金色. -->
+    <color name="gold_100">#FFFFD700</color>
+
+    <!-- 金麒麟色. -->
+    <color name="goldenrod_100">#FFDAA520</color>
+
+    <!-- 灰色. -->
+    <color name="gray_100">#FF808080</color>
+
+    <!-- 绿色. -->
+    <color name="green_100">#FF008000</color>
+
+    <!-- 黄绿色. -->
+    <color name="greenyellow_100">#FFADFF2F</color>
+
+    <!-- 灰色. -->
+    <color name="grey_100">#FF808080</color>
+
+    <!-- 蜜色. -->
+    <color name="honeydew_100">#FFF0FFF0</color>
+
+    <!-- 热粉红色. -->
+    <color name="hotpink_100">#FFFF69B4</color>
+
+    <!-- 印第安红. -->
+    <color name="indianred_100">#FFCD5C5C</color>
+
+    <!-- 靛青色. -->
+    <color name="indigo_100">#FF4B0082</color>
+
+    <!-- 象牙色. -->
+    <color name="ivory_100">#FFFFFFF0</color>
+
+    <!-- 黄褐色. -->
+    <color name="khaki_100">#FFF0E68C</color>
+
+    <!-- 淡紫色. -->
+    <color name="lavender_100">#FFE6E6FA</color>
+
+    <!-- 淡紫红. -->
+    <color name="lavenderblush_100">#FFFFF0F5</color>
+
+    <!-- 草绿色. -->
+    <color name="lawngreen_100">#FF7CFC00</color>
+
+    <!-- 柠檬绸色. -->
+    <color name="lemonchiffon_100">#FFFFFACD</color>
+
+    <!-- 亮蓝色. -->
+    <color name="lightblue_100">#FFADD8E6</color>
+
+    <!-- 亮珊瑚色. -->
+    <color name="lightcoral_100">#FFF08080</color>
+
+    <!-- 亮青色. -->
+    <color name="lightcyan_100">#FFE0FFFF</color>
+
+    <!-- 亮金黄色. -->
+    <color name="lightgoldenrodyellow_100">#FFFAFAD2</color>
+
+    <!-- 亮灰色. -->
+    <color name="lightgray_100">#FFD3D3D3</color>
+
+    <!-- 亮绿色. -->
+    <color name="lightgreen_100">#FF90EE90</color>
+
+    <!-- 亮灰色. -->
+    <color name="lightgrey_100">#FFD3D3D3</color>
+
+    <!-- 亮粉红色. -->
+    <color name="lightpink_100">#FFFFB6C1</color>
+
+    <!-- 亮肉色. -->
+    <color name="lightsalmon_100">#FFFFA07A</color>
+
+    <!-- 亮海蓝色. -->
+    <color name="lightseagreen_100">#FF20B2AA</color>
+
+    <!-- 亮天蓝色. -->
+    <color name="lightskyblue_100">#FF87CEFA</color>
+
+    <!-- 亮蓝灰. -->
+    <color name="lightslategray_100">#FF778899</color>
+
+    <!-- 亮钢兰色. -->
+    <color name="lightsteelblue_100">#FFB0C4DE</color>
+
+    <!-- 亮黄色. -->
+    <color name="lightyellow_100">#FFFFFFE0</color>
+
+    <!-- 酸橙色. -->
+    <color name="lime_100">#FF00FF00</color>
+
+    <!-- 橙绿色. -->
+    <color name="limegreen_100">#FF32CD32</color>
+
+    <!-- 亚麻色. -->
+    <color name="linen_100">#FFFAF0E6</color>
+
+    <!-- 红紫色. -->
+    <color name="magenta_100">#FFFF00FF</color>
+
+    <!-- 粟色. -->
+    <color name="maroon_100">#FF800000</color>
+
+    <!-- 中绿色. -->
+    <color name="mediumaquamarine_100">#FF66CDAA</color>
+
+    <!-- 中兰色. -->
+    <color name="mediumblue_100">#FF0000CD</color>
+
+    <!-- 中粉紫色. -->
+    <color name="mediumorchid_100">#FFBA55D3</color>
+
+    <!-- 中紫色. -->
+    <color name="mediumpurple_100">#FF9370DB</color>
+
+    <!-- 中海蓝. -->
+    <color name="mediumseagreen_100">#FF3CB371</color>
+
+    <!-- 中暗蓝色. -->
+    <color name="mediumslateblue_100">#FF7B68EE</color>
+
+    <!-- 中春绿色. -->
+    <color name="mediumspringgreen_100">#FF00FA9A</color>
+
+    <!-- 中绿宝石. -->
+    <color name="mediumturquoise_100">#FF48D1CC</color>
+
+    <!-- 中紫罗兰色. -->
+    <color name="mediumvioletred_100">#FFC71585</color>
+
+    <!-- 中灰兰色. -->
+    <color name="midnightblue_100">#FF191970</color>
+
+    <!-- 薄荷色. -->
+    <color name="mintcream_100">#FFF5FFFA</color>
+
+    <!-- 浅玫瑰色. -->
+    <color name="mistyrose_100">#FFFFE4E1</color>
+
+    <!-- 鹿皮色. -->
+    <color name="moccasin_100">#FFFFE4B5</color>
+
+    <!-- 纳瓦白. -->
+    <color name="navajowhite_100">#FFFFDEAD</color>
+
+    <!-- 海军色. -->
+    <color name="navy_100">#FF000080</color>
+
+    <!-- 老花色. -->
+    <color name="oldlace_100">#FFFDF5E6</color>
+
+    <!-- 橄榄色. -->
+    <color name="olive_100">#FF808000</color>
+
+    <!-- 深绿褐色. -->
+    <color name="olivedrab_100">#FF6B8E23</color>
+
+    <!-- 橙色. -->
+    <color name="orange_100">#FFFFA500</color>
+
+    <!-- 红橙色. -->
+    <color name="orangered_100">#FFFF4500</color>
+
+    <!-- 淡紫色. -->
+    <color name="orchid_100">#FFDA70D6</color>
+
+    <!-- 苍麒麟色. -->
+    <color name="palegoldenrod_100">#FFEEE8AA</color>
+
+    <!-- 苍绿色. -->
+    <color name="palegreen_100">#FF98FB98</color>
+
+    <!-- 苍宝石绿. -->
+    <color name="paleturquoise_100">#FFAFEEEE</color>
+
+    <!-- 苍紫罗兰色. -->
+    <color name="palevioletred_100">#FFDB7093</color>
+
+    <!-- 番木色. -->
+    <color name="papayawhip_100">#FFFFEFD5</color>
+
+    <!-- 桃色. -->
+    <color name="peachpuff_100">#FFFFDAB9</color>
+
+    <!-- 秘鲁色. -->
+    <color name="peru_100">#FFCD853F</color>
+
+    <!-- 粉红色. -->
+    <color name="pink_100">#FFFFC0CB</color>
+
+    <!-- 洋李色. -->
+    <color name="plum_100">#FFDDA0DD</color>
+
+    <!-- 粉蓝色. -->
+    <color name="powderblue_100">#FFB0E0E6</color>
+
+    <!-- 紫色. -->
+    <color name="purple_100">#FF800080</color>
+
+    <!-- 红色. -->
+    <color name="red_100">#FFFF0000</color>
+
+    <!-- 褐玫瑰红. -->
+    <color name="rosybrown_100">#FFBC8F8F</color>
+
+    <!-- 皇家蓝. -->
+    <color name="royalblue_100">#FF4169E1</color>
+
+    <!-- 重褐色. -->
+    <color name="saddlebrown_100">#FF8B4513</color>
+
+    <!-- 鲜肉色. -->
+    <color name="salmon_100">#FFFA8072</color>
+
+    <!-- 沙褐色. -->
+    <color name="sandybrown_100">#FFF4A460</color>
+
+    <!-- 海绿色. -->
+    <color name="seagreen_100">#FF2E8B57</color>
+
+    <!-- 海贝色. -->
+    <color name="seashell_100">#FFFFF5EE</color>
+
+    <!-- 赭色. -->
+    <color name="sienna_100">#FFA0522D</color>
+
+    <!-- 银色. -->
+    <color name="silver_100">#FFC0C0C0</color>
+
+    <!-- 天蓝色. -->
+    <color name="skyblue_100">#FF87CEEB</color>
+
+    <!-- 石蓝色. -->
+    <color name="slateblue_100">#FF6A5ACD</color>
+
+    <!-- 灰石色. -->
+    <color name="slategray_100">#FF708090</color>
+
+    <!-- 灰石色. -->
+    <color name="slategrey_100">#FF708090</color>
+
+    <!-- 雪白色. -->
+    <color name="snow_100">#FFFFFAFA</color>
+
+    <!-- 春绿色. -->
+    <color name="springgreen_100">#FF00FF7F</color>
+
+    <!-- 钢兰色. -->
+    <color name="steelblue_100">#FF4682B4</color>
+
+    <!-- 茶色. -->
+    <color name="tan_100">#FFD2B48C</color>
+
+    <!-- 水鸭色. -->
+    <color name="teal_100">#FF008080</color>
+
+    <!-- 蓟色. -->
+    <color name="thistle_100">#FFD8BFD8</color>
+
+    <!-- 西红柿色. -->
+    <color name="tomato_100">#FFFF6347</color>
+
+    <!-- 青绿色. -->
+    <color name="turquoise_100">#FF40E0D0</color>
+
+    <!-- 紫罗兰色. -->
+    <color name="violet_100">#FFEE82EE</color>
+
+    <!-- 浅黄色. -->
+    <color name="wheat_100">#FFF5DEB3</color>
+
+    <!-- 白色. -->
+    <color name="white_100">#FFFFFFFF</color>
+    <color name="solid">#E7E7E7</color>
+
+    <!-- 烟白色. -->
+    <color name="whitesmoke_100">#FFF5F5F5</color>
+
+    <!-- 黄色. -->
+    <color name="yellow_100">#FFFFFF00</color>
+    <color name="transparent">#00000000</color>
+
+</resources>

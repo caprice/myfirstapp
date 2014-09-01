@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">3MVideo</string>
+    <string name="hello_world">Welcome to 3M media center!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="lbl_download">↓</string>
+    <string name="lbl_back">Back</string>
+    <string name="lbl_addToFavorite">Favorite</string>
+    <string name="mediacontroller_play_pause">Play/Pause</string>
+    <string name="mediacontroller_expand">Expand Video</string>
+    <string name="VideoView_error_title">Cannot play video</string>
+    <string name="VideoView_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming to
+		this device.</string>
+    <string name="VideoView_error_text_unknown">Sorry, this video cannot be played now.\n Please check your network.</string>
+    <string name="VideoView_error_button">OK</string>
+
+</resources>

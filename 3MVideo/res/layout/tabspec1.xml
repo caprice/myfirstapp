@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/flNaviContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/border" >
+
+        <VideoView
+            android:id="@+id/player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tvVideoTitle"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/tvVideoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/length_L"
+            android:layout_above="@+id/tvVideoDesc"
+            android:paddingLeft="5dp"
+            android:textSize="@dimen/fontsize_Text_L" />
+
+        <TextView
+            android:id="@+id/tvVideoDesc"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/length_XL"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="5dp"
+            android:text=""
+            android:textSize="@dimen/fontsize_Text_L" />
+
+        <ImageButton
+            android:id="@+id/btnDownload"
+            android:layout_width="@dimen/length_L"
+            android:layout_height="@dimen/length_L"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tvVideoTitle"
+            android:layout_marginRight="@dimen/length_gap_L"
+            android:background="@drawable/round_border"
+            android:scaleType="fitXY"
+            android:src="@drawable/download" />
+        
+           <ImageButton
+            android:id="@+id/btnFullScreen"
+            android:layout_width="@dimen/length_L"
+            android:layout_height="@dimen/length_L"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/player"
+            android:scaleType="fitXY"
+            android:src="@drawable/btn_expand_video" />
+    </RelativeLayout>
+
+</LinearLayout>

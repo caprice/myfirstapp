@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/length_M" >
+
+    <ImageView
+        android:id="@+id/ivLineIcon"
+        android:layout_width="@dimen/image_M"
+        android:layout_height="@dimen/image_M"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/length_gap_XL"
+        android:layout_marginTop="@dimen/length_gap_XL"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_minimize_video"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvLineTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginLeft="@dimen/length_gap_L"
+        android:layout_toRightOf="@+id/ivLineIcon"
+        android:text=""
+        android:textSize="@dimen/fontsize_Text_L" />
+
+    <TextView
+        android:id="@+id/tvLineDesc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvLineTitle"
+        android:layout_marginLeft="@dimen/fontsize_Text_S"
+        android:layout_toRightOf="@+id/ivLineIcon"
+        android:text="" />
+
+</RelativeLayout>

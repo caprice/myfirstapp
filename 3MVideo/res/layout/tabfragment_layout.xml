@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/flNaviContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/mmmContents"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/mmm_logo"
+        android:layout_weight="1" >
+    </RelativeLayout>
+
+</LinearLayout>
