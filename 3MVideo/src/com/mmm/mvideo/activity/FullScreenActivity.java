@@ -19,9 +19,7 @@ import com.mmm.mvideo.activity.fragment.NavigationFragment.FragmentParameterKey;
 import com.mmm.mvideo.business.entity.MMMVideoItem;
 import com.mmm.mvideo.common.ApplicationCommon;
 import com.mmm.mvideo.view.MMMVideoView;
-import com.mmm.mvideo.webtrends.WebtrendsDataCollectionHelper;
 import com.mmm.mvideo.widget.MyMediaController;
-import com.webtrends.mobile.analytics.WebtrendsConfigurator;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -111,10 +109,6 @@ public class FullScreenActivity extends MMMActivity {
 				controller.show(0);
 			}
 		});
-
-		initWebtrends();
-		WebtrendsDataCollectionHelper.getInstance().onScreenView("FullScreenActivity/OnCreateView", "play the video : " + item.getUrl(), "View", null, "Play Video");
-
 	}
 
 	@Override
@@ -182,20 +176,10 @@ public class FullScreenActivity extends MMMActivity {
 		// TODO Auto-generated method stub
 		stopPlayer();
 		super.onDestroy();
-		WebtrendsDataCollectionHelper.getInstance().onViewEnd("FullScreenActivity/OnCreateView", null);
 	}
 
 	private void stopPlayer() {
 		if (vv != null)
 			vv.pause();
-	}
-
-	/**
-	 * 
-	 */
-	private void initWebtrends() {
-		WebtrendsConfigurator.ConfigureDC(this);
-		Uri localUri = getIntent().getData();
-		WebtrendsDataCollectionHelper.getInstance().setSessionInfo(localUri, this);
 	}
 }

@@ -31,7 +31,6 @@ import com.mmm.mvideo.business.service.MMMVideoRetrieveService;
 import com.mmm.mvideo.common.ApplicationCommon;
 import com.mmm.mvideo.common.MMMCommonUtils;
 import com.mmm.mvideo.infrastructure.media.FileUtil;
-import com.mmm.mvideo.webtrends.WebtrendsDataCollectionHelper;
 
 /**
  * The Class NavigationFragment.
@@ -345,12 +344,10 @@ public class NavigationFragment extends MMMBaseFragment {
 	@Override
 	public void onStart() {
 		super.onStart();
-		WebtrendsDataCollectionHelper.getInstance().onViewStart("HomeActivity/" + getTag() + "/" + mTitle, null);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		WebtrendsDataCollectionHelper.getInstance().onViewStart("HomeActivity/" + getTag() + "/" + mTitle, null);
 	}
 }

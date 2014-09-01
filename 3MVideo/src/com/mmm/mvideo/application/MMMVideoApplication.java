@@ -4,18 +4,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import android.app.Application;
 import android.util.Log;
 
 import com.mmm.mvideo.business.entity.MMMVideoItem;
 import com.mmm.mvideo.widget.CustomProgressDialog;
 import com.mmm.mvideo.xmlparser.MMMPlayListXmlParser;
-import com.webtrends.mobile.android.WebtrendsApplication;
 
 /**
  * @author Eric Liu
  * 
  */
-public class MMMVideoApplication extends WebtrendsApplication{
+public class MMMVideoApplication extends Application{
 	private ArrayList<MMMVideoItem> items;
 	/** The progress dialog. */
 	private CustomProgressDialog progressDialog;

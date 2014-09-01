@@ -1,12 +1,11 @@
 package com.mmm.mvideo.activity;
 
-import com.mmm.mvideo.widget.CustomProgressDialog;
-import com.webtrends.mobile.android.WebtrendsActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.mmm.mvideo.widget.CustomProgressDialog;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -14,7 +13,7 @@ import android.view.WindowManager;
  * 
  * @author a37wczz
  */
-public class MMMActivity extends WebtrendsActivity {
+public class MMMActivity extends Activity {
 	/** The TAG. */
 	protected final String TAG = this.getClass().getName();
 	/** The context. */

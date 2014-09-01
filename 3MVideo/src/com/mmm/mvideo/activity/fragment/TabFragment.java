@@ -21,8 +21,6 @@ import com.mmm.mvideo.business.entity.MMMVideoItem.PlayType;
 import com.mmm.mvideo.business.service.MMMVideoRetrieveService;
 import com.mmm.mvideo.common.ApplicationCommon;
 import com.mmm.mvideo.common.MMMCommonUtils;
-import com.mmm.mvideo.webtrends.WebtrendsDataCollectionHelper;
-import com.webtrends.mobile.analytics.WebtrendsConfigurator;
 
 /**
  * Fragment for a tab in the Tab View.
@@ -40,7 +38,6 @@ public class TabFragment extends MMMBaseFragment implements OnNavigationEventLis
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		WebtrendsConfigurator.ConfigureDC(getActivity());
 		super.onCreate(savedInstanceState);
 		this.layoutResource = R.layout.tabfragment_layout;
 		Bundle args = getArguments();
@@ -119,7 +116,6 @@ public class TabFragment extends MMMBaseFragment implements OnNavigationEventLis
 				args.putSerializable(FragmentParameterKey.NAV_ITEMS, subItems);
 				MMMCommonUtils.addNavFragment(this, args);
 			}
-			WebtrendsDataCollectionHelper.getInstance().onScreenView("HomeActivity/" + getTag(), "select nav : " + navItem.getTitle(), "Select", null, "Select Nav");
 		} else {
 			if (navItem.getPlayType() == PlayType.PLAY_PDF) {
 				Bundle args = new Bundle();
@@ -146,7 +142,6 @@ public class TabFragment extends MMMBaseFragment implements OnNavigationEventLis
 		fragmentTransaction.remove(getFragmentManager().findFragmentById(fragmentId));
 		fragmentTransaction.addToBackStack(null);
 		fragmentTransaction.commit();
-		WebtrendsDataCollectionHelper.getInstance().onButtonClick("Nav/back", "click nav back button", "Click", null);
 	}
 
 	/**
@@ -184,13 +179,11 @@ public class TabFragment extends MMMBaseFragment implements OnNavigationEventLis
 	@Override
 	public void onStart() {
 		super.onStart();
-		WebtrendsDataCollectionHelper.getInstance().onViewStart("HomeActivity/TabFragment/" + getTag(), null);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		WebtrendsDataCollectionHelper.getInstance().onViewEnd("HomeActivity/TabFragment/" + getTag(), null);
 	}
 
 }

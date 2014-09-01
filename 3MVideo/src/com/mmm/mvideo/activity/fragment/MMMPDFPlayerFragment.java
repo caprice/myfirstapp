@@ -19,8 +19,6 @@ import android.webkit.WebViewClient;
 import com.mmm.mvideo.R;
 import com.mmm.mvideo.activity.fragment.NavigationFragment.FragmentParameterKey;
 import com.mmm.mvideo.business.entity.MMMVideoItem;
-import com.mmm.mvideo.webtrends.WebtrendsDataCollectionHelper;
-import com.webtrends.mobile.analytics.WebtrendsDataCollector;
 
 /**
  * @author Eric Liu
@@ -57,8 +55,6 @@ public class MMMPDFPlayerFragment extends MMMBasePlayerFragment {
 		webView.setWebViewClient(new MyWebViewClient());
 		String pdfUrl = curItem.getUrl();
 		webView.loadUrl("http://docs.google.com/gview?embedded=true&url=" + pdfUrl);
-		// webView.loadUrl("file:///android_asset/temp.html");
-		WebtrendsDataCollectionHelper.getInstance().onScreenView(getTag() + "/MMMPDFPlayerFragment", "read PDF : " + "http://docs.google.com/gview?embedded=true&url=" + pdfUrl, "View", null, "Read PDF");
 		webView.setDownloadListener(new DownloadListener() {
 			@Override
 			public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
@@ -89,12 +85,10 @@ public class MMMPDFPlayerFragment extends MMMBasePlayerFragment {
 	@Override
 	public void onStart() {
 		super.onStart();
-		WebtrendsDataCollectionHelper.getInstance().onViewStart("HomeActivity/MMMPDFPlayerFragment", null);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		WebtrendsDataCollectionHelper.getInstance().onViewEnd("HomeActivity/MMMPDFPlayerFragment", null);
 	}
 }

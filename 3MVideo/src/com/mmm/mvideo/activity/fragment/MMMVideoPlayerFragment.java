@@ -30,9 +30,7 @@ import com.mmm.mvideo.common.ApplicationCommon;
 import com.mmm.mvideo.infrastructure.media.FileDownloadResult;
 import com.mmm.mvideo.infrastructure.media.HttpDownloader;
 import com.mmm.mvideo.view.MMMVideoView;
-import com.mmm.mvideo.webtrends.WebtrendsDataCollectionHelper;
 import com.mmm.mvideo.widget.MyMediaController;
-import com.webtrends.mobile.analytics.WebtrendsConfigurator;
 
 /**
  * @author Eric Liu
@@ -86,7 +84,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		WebtrendsConfigurator.ConfigureDC(getActivity());
 		if (savedInstanceState != null) {
 			playingPos = savedInstanceState.getInt(ApplicationCommon.TabFragmentParmKey.CUR_PLAYING_POS);
 		}
@@ -115,7 +112,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 
 			@Override
 			public void onClick(View v) {
-				WebtrendsDataCollectionHelper.getInstance().onButtonClick("Viewiew/DownloadButton" + getTag(), "click the download button, and the url is " + curiItem.getUrl(), "Click", null);
 				startProgressDialog("");
 				new Thread(new Runnable() {
 
@@ -149,7 +145,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 
 			@Override
 			public boolean onDoubleTap(final MotionEvent e) {
-				WebtrendsDataCollectionHelper.getInstance().onButtonClick("Viewiew/gesture", "Double tab the video view ", "Double Tap", null);
 				if (mPlayer.isPlaying()) {
 					mPlayer.pause();
 				} else {
@@ -160,7 +155,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 
 			@Override
 			public boolean onSingleTapConfirmed(final MotionEvent e) {
-				WebtrendsDataCollectionHelper.getInstance().onButtonClick("Viewiew/gesture", "Single tab the video view ", "Single Tap", null);
 				if (controller.isShowing()) {
 					controller.hide();
 				} else {
@@ -171,7 +165,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 
 			@Override
 			public void onLongPress(final MotionEvent e) {
-				WebtrendsDataCollectionHelper.getInstance().onButtonClick("Viewiew/gesture", "Long press the video view ", "Long press", null);
 				// if (mPlayer.isPlaying()) {
 				// mPlayer.pause();
 				// } else {
@@ -192,7 +185,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 	@Override
 	public void onStart() {
 		super.onStart();
-		WebtrendsDataCollectionHelper.getInstance().onViewStart("HomeActivity/MMMVideoPlayerFragment", null);
 		Log.i(TAG, ".onStart." + this);
 		playVideo();
 	}
@@ -224,7 +216,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 					mPlayer.setBackgroundColor(Color.TRANSPARENT);
 					mPlayer.seekTo(playingPos);
 					mPlayer.start();
-					WebtrendsDataCollectionHelper.getInstance().onScreenView(getTag() + "/VideoView", "play the video : " + videoPath, "View", null, "Play video");
 					controller.show();
 					stopProgressDialog();
 				}
@@ -308,7 +299,6 @@ public class MMMVideoPlayerFragment extends MMMBasePlayerFragment {
 	public void onStop() {
 		Log.d(TAG, ".onStop." + this);
 		stopPlayer();
-		WebtrendsDataCollectionHelper.getInstance().onViewEnd("HomeActivity/MMMVideoPlayerFragment", null);
 		super.onStop();
 	}
 

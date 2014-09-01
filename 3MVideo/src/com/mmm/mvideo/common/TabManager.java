@@ -16,7 +16,6 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 
 import com.mmm.mvideo.R;
-import com.mmm.mvideo.webtrends.WebtrendsDataCollectionHelper;
 
 /**
  * This is a helper class that implements a generic mechanism for associating
@@ -110,7 +109,6 @@ public class TabManager implements OnTabChangeListener {
 			transaction.commit();
 			this.activity.getSupportFragmentManager().executePendingTransactions();
 			this.setTabWidgetPreference(this.tabHost.getTabWidget());
-			WebtrendsDataCollectionHelper.getInstance().onButtonClick("HomeActivity/TabManager", "choose the tab : "+ this.currentTab.tag, "Click", null);
 		}
 	}
 

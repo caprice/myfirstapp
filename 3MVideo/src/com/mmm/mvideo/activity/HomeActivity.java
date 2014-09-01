@@ -11,7 +11,6 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
@@ -32,9 +31,7 @@ import com.mmm.mvideo.business.entity.MMMVideoItem;
 import com.mmm.mvideo.business.service.MMMVideoRetrieveService;
 import com.mmm.mvideo.common.ApplicationCommon;
 import com.mmm.mvideo.common.TabManager;
-import com.mmm.mvideo.webtrends.WebtrendsDataCollectionHelper;
 import com.mmm.mvideo.widget.CustomProgressDialog;
-import com.webtrends.mobile.analytics.WebtrendsConfigurator;
 
 /**
  * The Class HomeActivity.
@@ -77,19 +74,8 @@ public class HomeActivity extends FragmentActivity {
 		if (savedInstanceState != null) {
 			this.mTabHost.setCurrentTabByTag(savedInstanceState.getString("tab"));
 		}
-		initWebtrends();
-		WebtrendsDataCollectionHelper.getInstance().onViewStart(getClass().getSimpleName(), paramMap);
-
 	}
 
-	/**
-	 * 
-	 */
-	private void initWebtrends() {
-		WebtrendsConfigurator.ConfigureDC(this);
-		Uri localUri = getIntent().getData();
-		WebtrendsDataCollectionHelper.getInstance().setSessionInfo(localUri, this);
-	}
 
 	/**
 	 * 
@@ -152,12 +138,10 @@ public class HomeActivity extends FragmentActivity {
 		switch (item.getItemId()) {
 
 		case 100:
-			WebtrendsDataCollectionHelper.getInstance().onButtonClick("HomeActivity/settings", "Choose Video Categories", "Click", null);
 			openSettingView();
 			break;
 
 		case 101:
-			WebtrendsDataCollectionHelper.getInstance().onButtonClick("HomeActivity/exit", "exit app", "Click", null);
 			exitApp();
 			break;
 
@@ -213,7 +197,6 @@ public class HomeActivity extends FragmentActivity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-		WebtrendsDataCollectionHelper.getInstance().onViewEnd(getClass().getSimpleName(), null);
 	}
 
 	/**
